@@ -32,3 +32,11 @@
 |24.		|[CASE SCENARIO 4 : Case Scenario SQL Queries Implementation for General Hospital.](#exp24)<br/>	| 07-10-2022     	|
 |25.		|[CASE SCENARIO 5 : Case Scenario SQL Queries Implementation for Student Progress Monitoring System. ](#exp25)<br/>	|  07-10-2022  		|
 
+
+#Experment 1
+##Experment 1
+###Experiment 2
+
+[Expr1 SQL Queries](https://github.com/venuthna-reddy/CSA0525-DBMS#:~:text=3%20months%20ago-,Exp%2D6,-Create%20Exp%2D6)
+
+
