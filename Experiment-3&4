@@ -74,3 +74,27 @@ mysql> desc COURSE;
 | FacNo      | varchar(4)  | YES  |     | NULL    |       |
 +------------+-------------+------+-----+---------+-------+
 6 rows in set (0.00 sec)
+
+#1. mysql> insert STUDENT values(0525,'ravi','M',"2002-04-26",7013025421,'tirupathi');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert STUDENT values(0396,'harish','M',"2002-11-24",9948932030,'chittoor');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert STUDENT values(0102,'gurusai','M',"2001-04-09",9122884320,'srikalahasti');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert STUDENT values(0527,'sivareddy','M',"2002-03-23",6728829320,'kadapa');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select *from STUDENT;
++-------+-----------+--------+------------+------------+--------------+
+| RegNo | Name      | Gender | DOB        | MobileNo   | City         |
++-------+-----------+--------+------------+------------+--------------+
+|   102 | gurusai   | M      | 2001-04-09 | 9122884320 | srikalahasti |
+|   396 | harish    | M      | 2002-11-24 | 9948932030 | chittoor     |
+|   525 | ravi      | M      | 2002-04-26 | 7013025421 | tirupathi    |
+|   527 | sivareddy | M      | 2002-03-23 | 6728829320 | kadapa       |
++-------+-----------+--------+------------+------------+--------------+
+4 rows in set (0.00 sec)
+
