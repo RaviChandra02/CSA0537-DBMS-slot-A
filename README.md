@@ -40,3 +40,4 @@
 [Expr1 SQL Queries](https://github.com/venuthna-reddy/CSA0525-DBMS#:~:text=3%20months%20ago-,Exp%2D6,-Create%20Exp%2D6)
 
 
+![Uploading image.png…]()
