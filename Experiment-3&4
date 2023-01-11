@@ -1,4 +1,4 @@
-mysql> alter table STUDENT add primary key(RegNo);
+#1. mysql> alter table STUDENT add primary key(RegNo);
 Query OK, 0 rows affected (0.04 sec)
 Records: 0  Duplicates: 0  Warnings: 0
 
@@ -75,7 +75,7 @@ mysql> desc COURSE;
 +------------+-------------+------+-----+---------+-------+
 6 rows in set (0.00 sec)
 
-#1. mysql> insert STUDENT values(0525,'ravi','M',"2002-04-26",7013025421,'tirupathi');
+##1. mysql> insert STUDENT values(0525,'ravi','M',"2002-04-26",7013025421,'tirupathi');
 Query OK, 1 row affected (0.01 sec)
 
 mysql> insert STUDENT values(0396,'harish','M',"2002-11-24",9948932030,'chittoor');
@@ -98,7 +98,7 @@ mysql> select *from STUDENT;
 +-------+-----------+--------+------------+------------+--------------+
 4 rows in set (0.00 sec)
 
-#2. mysql> insert into FACULTY values(1010, 'perumal','M',"1984-05-07","2015-12-13",9093493053);
+##2. mysql> insert into FACULTY values(1010, 'perumal','M',"1984-05-07","2015-12-13",9093493053);
 Query OK, 1 row affected (0.01 sec)
 
 mysql> insert into FACULTY values(3435, 'jaisharma','M',"1996-07-23","2018-06-18",9338393045);
@@ -121,7 +121,7 @@ mysql> select *from FACULTY;
 +-------+-----------+--------+------------+------------+------------+
 4 rows in set (0.00 sec)
 
-#3. mysql> insert into DEPARTMENT values(01,'CSE','JS');
+##3. mysql> insert into DEPARTMENT values(01,'CSE','JS');
 Query OK, 1 row affected (0.00 sec)
 
 mysql> insert into DEPARTMENT values(02,'ECE','SV');
@@ -148,7 +148,7 @@ mysql> select *from DEPARTMENT;
 +--------+----------+----------+
 5 rows in set (0.01 sec)
 
-#4. mysql> insert into COURSE values('01','java','E','1','123','2002');
+##4. mysql> insert into COURSE values('01','java','E','1','123','2002');
 Query OK, 1 row affected (0.00 sec)
 
 mysql> insert into COURSE values('02','python','H','2','101','2005');
@@ -171,7 +171,7 @@ mysql> select *from COURSE;
 +----------+------------+------------+-------+--------+-------+
 4 rows in set (0.00 sec)
 
-##1. mysql> update STUDENT set RegNo = 1525 where RegNo = 525;
+#2. mysql> update STUDENT set RegNo = 1525 where RegNo = 525;
 Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
@@ -186,7 +186,7 @@ mysql> select *from STUDENT;
 +-------+-----------+--------+------------+------------+--------------+
 4 rows in set (0.00 sec)
 
-##2. mysql> delete from FACULTY where DOJ = "2020-09-03";
+#4. mysql> delete from FACULTY where DOJ = "2020-09-03";
 Query OK, 1 row affected (0.00 sec)
 
 mysql> select *from FACULTY;
@@ -199,7 +199,7 @@ mysql> select *from FACULTY;
 +-------+-----------+--------+------------+------------+------------+
 3 rows in set (0.00 sec)
 
-##3. mysql> update FACULTY set DOB = "1986-06-15" where FacName = 'perumal';
+#4. mysql> update FACULTY set DOB = "1986-06-15" where FacName = 'perumal';
 Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
@@ -213,7 +213,7 @@ mysql> select *from FACULTY;
 +-------+-----------+--------+------------+------------+------------+--------+
 3 rows in set (0.00 sec)
 
-##4. mysql> delete from FACULTY where FacAge > 65;
+#5. mysql> delete from FACULTY where FacAge > 65;
 Query OK, 1 row affected (0.00 sec)
 
 mysql> select *from FACULTY;
