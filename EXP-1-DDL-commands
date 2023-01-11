@@ -15,7 +15,7 @@ Reading table information for completion of table and column names
 You can turn off this feature to get a quicker startup with -A
 
 Database changed
-mysql> create table STUDENT(RegNo int(10),Name varchar(15),Gender char(1),DOB date,MobileNo varchar(10),City varchar(15));
+#1. mysql> create table STUDENT(RegNo int(10),Name varchar(15),Gender char(1),DOB date,MobileNo varchar(10),City varchar(15));
 Query OK, 0 rows affected, 1 warning (0.01 sec)
 
 mysql> desc STUDENT;
@@ -31,20 +31,7 @@ mysql> desc STUDENT;
 +----------+-------------+------+-----+---------+-------+
 6 rows in set (0.00 sec)
 
-mysql> desc STUDENT;
-+----------+-------------+------+-----+---------+-------+
-| Field    | Type        | Null | Key | Default | Extra |
-+----------+-------------+------+-----+---------+-------+
-| RegNo    | int         | YES  |     | NULL    |       |
-| Name     | varchar(15) | YES  |     | NULL    |       |
-| Gender   | char(1)     | YES  |     | NULL    |       |
-| DOB      | date        | YES  |     | NULL    |       |
-| MobileNo | varchar(20) | YES  |     | NULL    |       |
-| city     | varchar(15) | YES  |     | NULL    |       |
-+----------+-------------+------+-----+---------+-------+
-6 rows in set (0.00 sec)
-
-mysql> create table FACULTY(FacNo varchar(4),FacName varchar(15),Gender char(1),DOB date,DOJ date,MobileNo int(10));
+#2. mysql> create table FACULTY(FacNo varchar(4),FacName varchar(15),Gender char(1),DOB date,DOJ date,MobileNo int(10));
 Query OK, 0 rows affected, 1 warning (0.02 sec)
 
 mysql> desc FACULTY;
@@ -60,7 +47,7 @@ mysql> desc FACULTY;
 +----------+-------------+------+-----+---------+-------+
 6 rows in set (0.01 sec)
 
-mysql> create table DEPARTMENT(DeptNo varchar(4),DeptName varchar(15),DeptHead varchar(4));
+#3. mysql> create table DEPARTMENT(DeptNo varchar(4),DeptName varchar(15),DeptHead varchar(4));
 Query OK, 0 rows affected (0.01 sec)
 
 mysql> desc DEPARTMENT;
@@ -73,9 +60,7 @@ mysql> desc DEPARTMENT;
 +----------+-------------+------+-----+---------+-------+
 3 rows in set (0.01 sec)
 
-mysql> create table COURSE(CourseNo varchar(3),CourseDesc varchar(14),CourseTypechar(1),SemNo char(1),HallNo varchar(4),FacNo varchar(4));
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(1),SemNo char(1),HallNo varchar(4),FacNo varchar(4))' at line 1
-mysql> create table COURSE(CourseNo varchar(3),CourseDesc varchar(14),CourseType char(1),SemNo char(1),HallNo varchar(4),FacNo varchar(4));
+#4. mysql> create table COURSE(CourseNo varchar(3),CourseDesc varchar(14),CourseType char(1),SemNo char(1),HallNo varchar(4),FacNo varchar(4));
 Query OK, 0 rows affected (0.01 sec)
 
 mysql> desc COURSE;
@@ -91,7 +76,7 @@ mysql> desc COURSE;
 +------------+-------------+------+-----+---------+-------+
 6 rows in set (0.00 sec)
 
-mysql> alter table FACULTY 
+#5. mysql> alter table FACULTY 
     -> add column DeptNo varchar(4);
 Query OK, 0 rows affected (0.02 sec)
 Records: 0  Duplicates: 0  Warnings: 0
