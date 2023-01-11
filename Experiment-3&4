@@ -147,3 +147,26 @@ mysql> select *from DEPARTMENT;
 | 5      | AGRI     | PD       |
 +--------+----------+----------+
 5 rows in set (0.01 sec)
+
+#4. mysql> insert into COURSE values('01','java','E','1','123','2002');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into COURSE values('02','python','H','2','101','2005');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into COURSE values('03','C','M','5','109','2009');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into COURSE values('04','AI','H','3','121','2010');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select *from COURSE;
++----------+------------+------------+-------+--------+-------+
+| CourseNo | CourseDesc | CourseType | SemNo | HallNo | FacNo |
++----------+------------+------------+-------+--------+-------+
+| 01       | java       | E          | 1     | 123    | 2002  |
+| 02       | python     | H          | 2     | 101    | 2005  |
+| 03       | C          | M          | 5     | 109    | 2009  |
+| 04       | AI         | H          | 3     | 121    | 2010  |
++----------+------------+------------+-------+--------+-------+
+4 rows in set (0.00 sec)
