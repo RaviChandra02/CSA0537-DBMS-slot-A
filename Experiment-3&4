@@ -170,3 +170,18 @@ mysql> select *from COURSE;
 | 04       | AI         | H          | 3     | 121    | 2010  |
 +----------+------------+------------+-------+--------+-------+
 4 rows in set (0.00 sec)
+
+##1. mysql> update STUDENT set RegNo = 1525 where RegNo = 525;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from STUDENT;
++-------+-----------+--------+------------+------------+--------------+
+| RegNo | Name      | Gender | DOB        | MobileNo   | City         |
++-------+-----------+--------+------------+------------+--------------+
+|   102 | gurusai   | M      | 2001-04-09 | 9122884320 | srikalahasti |
+|   396 | harish    | M      | 2002-11-24 | 9948932030 | chittoor     |
+|   527 | sivareddy | M      | 2002-03-23 | 6728829320 | kadapa       |
+|  1525 | ravi      | M      | 2002-04-26 | 7013025421 | tirupathi    |
++-------+-----------+--------+------------+------------+--------------+
+4 rows in set (0.00 sec)
