@@ -1,1 +1,45 @@
+mysql> insert into COURSE values('01','java','program','1','123','2002');
+Query OK, 1 row affected (0.01 sec)
 
+mysql> insert into COURSE values('02','python','program','2','101','2005');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into COURSE values('03','english','statis','5','109','2009');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into COURSE values('04','ethics','statis','3','121','2010');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into COURSE values('05','c++','program','4','111','2008');
+Query OK, 1 row affected (0.00 sec)
+mysql> select *from COURSE;
+
++----------+------------+------------+-------+--------+-------+
+| CourseNo | CourseDesc | CourseType | SemNo | HallNo | FacNo |
++----------+------------+------------+-------+--------+-------+
+| 01       | java       | program    | 1     | 123    | 2002  |
+| 02       | python     | program    | 2     | 101    | 2005  |
+| 03       | english    | statis     | 5     | 109    | 2009  |
+| 04       | ethics     | statis     | 3     | 121    | 2010  |
+| 05       | c++        | program    | 4     | 111    | 2008  |
++----------+------------+------------+-------+--------+-------+
+5 rows in set (0.00 sec)
+
+#1.1. mysql> select * from COURSE where CourseType IN ('Program');
++----------+------------+------------+-------+--------+-------+
+| CourseNo | CourseDesc | CourseType | SemNo | HallNo | FacNo |
++----------+------------+------------+-------+--------+-------+
+| 01       | java       | program    | 1     | 123    | 2002  |
+| 02       | python     | program    | 2     | 101    | 2005  |
+| 05       | c++        | program    | 4     | 111    | 2008  |
++----------+------------+------------+-------+--------+-------+
+3 rows in set (0.00 sec)
+
+#1.2. mysql> select * from COURSE where CourseType IN ('statis');
++----------+------------+------------+-------+--------+-------+
+| CourseNo | CourseDesc | CourseType | SemNo | HallNo | FacNo |
++----------+------------+------------+-------+--------+-------+
+| 03       | english    | statis     | 5     | 109    | 2009  |
+| 04       | ethics     | statis     | 3     | 121    | 2010  |
++----------+------------+------------+-------+--------+-------+
+2 rows in set (0.00 sec)
