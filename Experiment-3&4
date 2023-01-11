@@ -120,3 +120,30 @@ mysql> select *from FACULTY;
 | 3435  | jaisharma | M      | 1996-07-23 | 2018-06-18 | 9338393045 |
 +-------+-----------+--------+------------+------------+------------+
 4 rows in set (0.00 sec)
+
+#3. mysql> insert into DEPARTMENT values(01,'CSE','JS');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into DEPARTMENT values(02,'ECE','SV');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into DEPARTMENT values(04,'EEE','NB');
+Query OK, 1 row affected (0.01 sec)
+
+mysql>  insert into DEPARTMENT values(03,'MECH','SK');
+Query OK, 1 row affected (0.01 sec)
+
+mysql>  insert into DEPARTMENT values(05,'AGRI','PD');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select *from DEPARTMENT;
++--------+----------+----------+
+| DeptNo | DeptName | DeptHead |
++--------+----------+----------+
+| 1      | CSE      | JS       |
+| 2      | ECE      | SV       |
+| 3      | MECH     | SK       |
+| 4      | EEE      | NB       |
+| 5      | AGRI     | PD       |
++--------+----------+----------+
+5 rows in set (0.01 sec)
