@@ -9,25 +9,124 @@
 +-------+-----------+------------+
 4 rows in set (0.00 sec)
 
-#2. mysql> insert STUDENT values(0526,'jahnvi kapoor','F',"2001-02-13",9143143525,'mumbai');
+#2. mysql> insert STUDENT values(0525,'ravi','M',"2002-04-26",7013025421,'tirupathi',"C001");
 Query OK, 1 row affected (0.01 sec)
 
-mysql> select *from STUDENT;
-+-------+---------------+--------+------------+------------+--------------+
-| RegNo | Name          | Gender | DOB        | MobileNo   | City         |
-+-------+---------------+--------+------------+------------+--------------+
-|   102 | gurusai       | M      | 2001-04-09 | 9122884320 | srikalahasti |
-|   396 | harish        | M      | 2002-11-24 | 9948932030 | chittoor     |
-|   526 | jahnvi kapoor | F      | 2001-02-13 | 9143143525 | mumbai       |
-|   527 | sivareddy     | M      | 2002-03-23 | 6728829320 | kadapa       |
-|  1525 | ravi          | M      | 2002-04-26 | 7013025421 | tirupathi    |
-+-------+---------------+--------+------------+------------+--------------+
-5 rows in set (0.00 sec)
+mysql> insert STUDENT values(0396,'harish','M',"2002-11-24",9948932030,'chittoor',"C002");
+Query OK, 1 row affected (0.00 sec)
 
-mysql> select *from STUDENT where Gender = "F";
-+-------+---------------+--------+------------+------------+--------+
-| RegNo | Name          | Gender | DOB        | MobileNo   | City   |
-+-------+---------------+--------+------------+------------+--------+
-|   526 | jahnvi kapoor | F      | 2001-02-13 | 9143143525 | mumbai |
-+-------+---------------+--------+------------+------------+--------+
+mysql> insert STUDENT values(0102,'gurusai','M',"2001-04-09",9122884320,'srikalahasti',"C002");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert STUDENT values(0527,'sivareddy','M',"2002-03-23",6728829320,'kadapa',"C001");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert STUDENT values(0526,'jahnvi kapoor','F',"2001-02-13",9143143525,'mumbai',"C001");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert STUDENT values(0540,'reshma','F',"2001-02-13",9009294020,'karnataka',"C004");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert STUDENT values(0540,'maha lakshmi','F',"2000-08-16",9232235453,'pune',"C005");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> delete from STUDENT  where Name = 'maha lakshmi';
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert STUDENT values(0543,'maha lakshmi','F',"2000-08-16",9232235453,'pune',"C005");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert STUDENT values(0420,'venky','M',"2002-04-07",9525684827,'salem',"C001");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from STUDENT;
++-------+---------------+--------+------------+------------+--------------+----------+
+| RegNo | Name          | Gender | DOB        | MobileNo   | City         | CourseNo |
++-------+---------------+--------+------------+------------+--------------+----------+
+|   525 | ravi          | M      | 2002-04-26 | 7013025421 | tirupathi    | C001     |
+|   396 | harish        | M      | 2002-11-24 | 9948932030 | chittoor     | C002     |
+|   102 | gurusai       | M      | 2001-04-09 | 9122884320 | srikalahasti | C002     |
+|   527 | sivareddy     | M      | 2002-03-23 | 6728829320 | kadapa       | C001     |
+|   526 | jahnvi kapoor | F      | 2001-02-13 | 9143143525 | mumbai       | C001     |
+|   540 | reshma        | F      | 2001-02-13 | 9009294020 | karnataka    | C004     |
+|   543 | maha lakshmi  | F      | 2000-08-16 | 9232235453 | pune         | C005     |
+|   420 | venky         | M      | 2002-04-07 | 9525684827 | salem        | C001     |
++-------+---------------+--------+------------+------------+--------------+----------+
+8 rows in set (0.01 sec)
+
+mysql> select *from STUDENT where Gender="F";
++-------+---------------+--------+------------+------------+-----------+----------+
+| RegNo | Name          | Gender | DOB        | MobileNo   | City      | CourseNo |
++-------+---------------+--------+------------+------------+-----------+----------+
+|   526 | jahnvi kapoor | F      | 2001-02-13 | 9143143525 | mumbai    | C001     |
+|   540 | reshma        | F      | 2001-02-13 | 9009294020 | karnataka | C004     |
+|   543 | maha lakshmi  | F      | 2000-08-16 | 9232235453 | pune      | C005     |
++-------+---------------+--------+------------+------------+-----------+----------+
+3 rows in set (0.00 sec)
+
+#3. mysql> select *from STUDENT where CourseNo = "C001";
++-------+---------------+--------+------------+------------+-----------+----------+
+| RegNo | Name          | Gender | DOB        | MobileNo   | City      | CourseNo |
++-------+---------------+--------+------------+------------+-----------+----------+
+|   525 | ravi          | M      | 2002-04-26 | 7013025421 | tirupathi | C001     |
+|   527 | sivareddy     | M      | 2002-03-23 | 6728829320 | kadapa    | C001     |
+|   526 | jahnvi kapoor | F      | 2001-02-13 | 9143143525 | mumbai    | C001     |
+|   420 | venky         | M      | 2002-04-07 | 9525684827 | salem     | C001     |
++-------+---------------+--------+------------+------------+-----------+----------+
+4 rows in set (0.00 sec)
+
+#4. mysql> select *from FACULTY;
++-------+-----------+--------+------------+------------+------------+--------+
+| FacNo | FacName   | Gender | DOB        | DOJ        | MobileNo   | FacAge |
++-------+-----------+--------+------------+------------+------------+--------+
+| 1010  | perumal   | M      | 1986-06-15 | 2012-12-13 | 9093493053 | 67     |
+| 2189  | vinod     | M      | 1980-03-19 | 2017-08-30 | 6278490234 | 43     |
+| 3435  | jaisharma | M      | 1996-07-23 | 2018-06-18 | 9338393045 | 27     |
++-------+-----------+--------+------------+------------+------------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select *from FACULTY where DOJ < "2014-11-01";
++-------+---------+--------+------------+------------+------------+--------+
+| FacNo | FacName | Gender | DOB        | DOJ        | MobileNo   | FacAge |
++-------+---------+--------+------------+------------+------------+--------+
+| 1010  | perumal | M      | 1986-06-15 | 2012-12-13 | 9093493053 | 67     |
++-------+---------+--------+------------+------------+------------+--------+
 1 row in set (0.00 sec)
+
+#5. mysql> select *from STUDENT where Name like '%ma%';
++-------+--------------+--------+------------+------------+-----------+----------+
+| RegNo | Name         | Gender | DOB        | MobileNo   | City      | CourseNo |
++-------+--------------+--------+------------+------------+-----------+----------+
+|   540 | reshma       | F      | 2001-02-13 | 9009294020 | karnataka | C004     |
+|   543 | maha lakshmi | F      | 2000-08-16 | 9232235453 | pune      | C005     |
++-------+--------------+--------+------------+------------+-----------+----------+
+2 rows in set (0.00 sec)
+
+#6. mysql> select*from STUDENT where City like '%sal%';
++-------+-------+--------+------------+------------+-------+----------+
+| RegNo | Name  | Gender | DOB        | MobileNo   | City  | CourseNo |
++-------+-------+--------+------------+------------+-------+----------+
+|   420 | venky | M      | 2002-04-07 | 9525684827 | salem | C001     |
++-------+-------+--------+------------+------------+-------+----------+
+1 row in set (0.01 sec)
+
+#7. mysql> select*from STUDENT where char_length(Name) !=6;
++-------+---------------+--------+------------+------------+--------------+----------+
+| RegNo | Name          | Gender | DOB        | MobileNo   | City         | CourseNo |
++-------+---------------+--------+------------+------------+--------------+----------+
+|   525 | ravi          | M      | 2002-04-26 | 7013025421 | tirupathi    | C001     |
+|   102 | gurusai       | M      | 2001-04-09 | 9122884320 | srikalahasti | C002     |
+|   527 | sivareddy     | M      | 2002-03-23 | 6728829320 | kadapa       | C001     |
+|   526 | jahnvi kapoor | F      | 2001-02-13 | 9143143525 | mumbai       | C001     |
+|   543 | maha lakshmi  | F      | 2000-08-16 | 9232235453 | pune         | C005     |
+|   420 | venky         | M      | 2002-04-07 | 9525684827 | salem        | C001     |
++-------+---------------+--------+------------+------------+--------------+----------+
+6 rows in set (0.01 sec)
+
+#8. mysql> select *from STUDENT where name like '%th%';
++-------+--------+--------+------------+------------+--------+----------+
+| RegNo | Name   | Gender | DOB        | MobileNo   | City   | CourseNo |
++-------+--------+--------+------------+------------+--------+----------+
+|   560 | tharun | M      | 2005-08-22 | 9738293872 | manali | C003     |
++-------+--------+--------+------------+------------+--------+----------+
+1 row in set (0.01 sec)
