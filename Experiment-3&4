@@ -199,3 +199,16 @@ mysql> select *from FACULTY;
 +-------+-----------+--------+------------+------------+------------+
 3 rows in set (0.00 sec)
 
+##3. mysql> update FACULTY set DOB = "1986-06-15" where FacName = 'perumal';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from FACULTY;
++-------+-----------+--------+------------+------------+------------+
+| FacNo | FacName   | Gender | DOB        | DOJ        | MobileNo   |
++-------+-----------+--------+------------+------------+------------+
+| 1010  | perumal   | M      | 1986-06-15 | 2015-12-13 | 9093493053 |
+| 2189  | vinod     | M      | 1990-03-19 | 2017-08-30 | 6278490234 |
+| 3435  | jaisharma | M      | 1996-07-23 | 2018-06-18 | 9338393045 |
++-------+-----------+--------+------------+------------+------------+
+3 rows in set (0.00 sec)
