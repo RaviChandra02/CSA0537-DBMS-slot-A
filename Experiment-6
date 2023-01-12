@@ -43,3 +43,171 @@ mysql> select *from COURSE;
 | 04       | ethics     | statis     | 3     | 121    | 2010  |
 +----------+------------+------------+-------+--------+-------+
 2 rows in set (0.00 sec)
+
+#2. mysql> insert into COURSE values('C001','python','program','2','101','2005','69','191911396');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into COURSE values('C003','english','statis','5','109','2009','60','191911102');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into COURSE values('C002','ethics','statis','3','121','2010','90','191911399');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into COURSE values('C005','c++','program','4','111','2008','75','191911540');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into COURSE values('C021','AI','program','6','185','2004','58','191911367');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into COURSE values('C021','datastructures','program','8','126','2000','63','191911526');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from COURSE;
++----------+----------------+------------+-------+--------+-------+-------+-----------+
+| CourseNo | CourseDesc     | CourseType | SemNo | HallNo | FacNo | Marks | RegNo     |
++----------+----------------+------------+-------+--------+-------+-------+-----------+
+| C001     | java           | program    | 1     | 123    | 2002  | 80    | 191911525 |
+| C001     | python         | program    | 2     | 101    | 2005  | 69    | 191911396 |
+| C003     | english        | statis     | 5     | 109    | 2009  | 60    | 191911102 |
+| C002     | ethics         | statis     | 3     | 121    | 2010  | 90    | 191911399 |
+| C005     | c++            | program    | 4     | 111    | 2008  | 75    | 191911540 |
+| C021     | AI             | program    | 6     | 185    | 2004  | 58    | 191911367 |
+| C021     | datastructures | program    | 8     | 126    | 2000  | 63    | 191911526 |
+| C021     | ML             | program    | 9     | 126    | 2005  | 83    | 191911544 |
++----------+----------------+------------+-------+--------+-------+-------+-----------+
+8 rows in set (0.00 sec)
+
+mysql> select * from COURSE where Marks between 50 and 80;
++----------+----------------+------------+-------+--------+-------+-------+-----------+
+| CourseNo | CourseDesc     | CourseType | SemNo | HallNo | FacNo | Marks | RegNo     |
++----------+----------------+------------+-------+--------+-------+-------+-----------+
+| C001     | java           | program    | 1     | 123    | 2002  | 80    | 191911525 |
+| C001     | python         | program    | 2     | 101    | 2005  | 69    | 191911396 |
+| C003     | english        | statis     | 5     | 109    | 2009  | 60    | 191911102 |
+| C005     | c++            | program    | 4     | 111    | 2008  | 75    | 191911540 |
+| C021     | AI             | program    | 6     | 185    | 2004  | 58    | 191911367 |
+| C021     | datastructures | program    | 8     | 126    | 2000  | 63    | 191911526 |
+| C003     | french         | statis     | 5     | 108    | 2007  | 78    | 191911432 |
+| C003     | japanese       | statis     | 5     | 108    | 2005  | 72    | 191911095 |
++----------+----------------+------------+-------+--------+-------+-------+-----------+
+8 rows in set (0.00 sec)
+
+##1.1. mysql> select CourseNo ,avg(Marks) from COURSE where CourseNo = 'C002';
++----------+------------+
+| CourseNo | avg(Marks) |
++----------+------------+
+| C002     |         90 |
++----------+------------+
+1 row in set (0.00 sec)
+
+##1.2. mysql> select CourseNo,min(Marks),max(Marks) from COURSE where CourseNo = 'C021';
++----------+------------+------------+
+| CourseNo | min(Marks) | max(Marks) |
++----------+------------+------------+
+| C021     | 58         | 83         |
++----------+------------+------------+
+1 row in set (0.00 sec)
+
+##1.3. mysql> select SemNo,min(Marks),max(Marks),avg(Marks) from COURSE where SemNo = '5';
++-------+------------+------------+------------+
+| SemNo | min(Marks) | max(Marks) | avg(Marks) |
++-------+------------+------------+------------+
+| 5     | 60         | 78         |         70 |
++-------+------------+------------+------------+
+1 row in set (0.01 sec)
+
+##1.4. mysql> select CourseNo,avg(Marks) from COURSE where CourseNo ='C001';
++----------+------------+
+| CourseNo | avg(Marks) |
++----------+------------+
+| C001     |       74.5 |
++----------+------------+
+1 row in set (0.00 sec)
+
+mysql> select CourseNo,avg(Marks) from COURSE where CourseNo ='C002';
++----------+------------+
+| CourseNo | avg(Marks) |
++----------+------------+
+| C002     |         90 |
++----------+------------+
+1 row in set (0.00 sec)
+
+mysql> select CourseNo,avg(Marks) from COURSE where CourseNo ='C003';
++----------+------------+
+| CourseNo | avg(Marks) |
++----------+------------+
+| C003     |         70 |
++----------+------------+
+1 row in set (0.00 sec)
+
+mysql> select CourseNo,avg(Marks) from COURSE where CourseNo ='C005';
++----------+------------+
+| CourseNo | avg(Marks) |
++----------+------------+
+| C005     |         75 |
++----------+------------+
+1 row in set (0.00 sec)
+
+mysql> select CourseNo,avg(Marks) from COURSE where CourseNo ='C021';
++----------+------------+
+| CourseNo | avg(Marks) |
++----------+------------+
+| C021     |         68 |
++----------+------------+
+1 row in set (0.00 sec)
+
+##1.5. mysql> select sum(Marks) from COURSE;
++------------+
+| sum(Marks) |
++------------+
+|        728 |
++------------+
+1 row in set (0.00 sec)
+
+##1.6. mysql> select CourseNo,count(CourseNo) from COURSE where CourseNo = 'C001';
++----------+-----------------+
+| CourseNo | count(CourseNo) |
++----------+-----------------+
+| C001     |               2 |
++----------+-----------------+
+1 row in set (0.00 sec)
+
+mysql> select CourseNo,count(CourseNo) from COURSE where CourseNo = 'C002';
++----------+-----------------+
+| CourseNo | count(CourseNo) |
++----------+-----------------+
+| C002     |               1 |
++----------+-----------------+
+1 row in set (0.00 sec)
+
+mysql> select CourseNo,count(CourseNo) from COURSE where CourseNo = 'C003';
++----------+-----------------+
+| CourseNo | count(CourseNo) |
++----------+-----------------+
+| C003     |               3 |
++----------+-----------------+
+1 row in set (0.01 sec)
+
+mysql> select CourseNo,count(CourseNo) from COURSE where CourseNo = 'C005';
++----------+-----------------+
+| CourseNo | count(CourseNo) |
++----------+-----------------+
+| C005     |               1 |
++----------+-----------------+
+1 row in set (0.00 sec)
+
+mysql> select CourseNo,count(CourseNo) from COURSE where CourseNo = 'C021';
++----------+-----------------+
+| CourseNo | count(CourseNo) |
++----------+-----------------+
+| C021     |               3 |
++----------+-----------------+
+1 row in set (0.00 sec)
+
+##1.7. mysql> select count(CourseNo) from COURSE;
++-----------------+
+| count(CourseNo) |
++-----------------+
+|              10 |
++-----------------+
+1 row in set (0.00 sec)
