@@ -1,1 +1,69 @@
+#1. mysql> select *from STUDENT;
++-------+---------------+--------+------------+------------+--------------+----------+
+| RegNo | Name          | Gender | DOB        | MobileNo   | City         | CourseNo |
++-------+---------------+--------+------------+------------+--------------+----------+
+|   525 | ravi          | M      | 2002-04-26 | 7013025421 | tirupathi    | C001     |
+|   396 | harish        | M      | 2002-11-24 | 9948932030 | chittoor     | C002     |
+|   102 | gurusai       | M      | 2001-04-09 | 9122884320 | srikalahasti | C002     |
+|   527 | sivareddy     | M      | 2002-03-23 | 6728829320 | kadapa       | C001     |
+|   526 | jahnvi kapoor | F      | 2001-02-13 | 9143143525 | mumbai       | C001     |
+|   543 | maha lakshmi  | F      | 2000-08-16 | 9232235453 | pune         | C005     |
+|   420 | venky         | M      | 2002-04-07 | 9525684827 | salem        | C001     |
+|   540 | reshma        | F      | 2001-02-13 | 9009294020 | karnataka    | C004     |
+|   560 | tharun        | M      | 2005-08-22 | 9738293872 | manali       | C003     |
++-------+---------------+--------+------------+------------+--------------+----------+
+9 rows in set (0.00 sec)
 
+mysql> select CourseNo,count(RegNo) from STUDENT group by CourseNo;
++----------+--------------+
+| CourseNo | count(RegNo) |
++----------+--------------+
+| C001     |            4 |
+| C002     |            2 |
+| C005     |            1 |
+| C004     |            1 |
+| C003     |            1 |
++----------+--------------+
+5 rows in set (0.00 sec)
+
+#2. mysql> select RegNo,count(CourseNo) from student group by RegNo;
++-------+-----------------+
+| RegNo | count(CourseNo) |
++-------+-----------------+
+|   525 |               1 |
+|   396 |               1 |
+|   102 |               1 |
+|   527 |               1 |
+|   526 |               1 |
+|   543 |               1 |
+|   420 |               1 |
+|   540 |               1 |
+|   560 |               1 |
++-------+-----------------+
+9 rows in set (0.00 sec)
+
+#3. mysql> select RegNo,Name,Gender,MobileNo from STUDENT order by RegNo;
++-------+---------------+--------+------------+
+| RegNo | Name          | Gender | MobileNo   |
++-------+---------------+--------+------------+
+|   102 | gurusai       | M      | 9122884320 |
+|   396 | harish        | M      | 9948932030 |
+|   420 | venky         | M      | 9525684827 |
+|   525 | ravi          | M      | 7013025421 |
+|   526 | jahnvi kapoor | F      | 9143143525 |
+|   527 | sivareddy     | M      | 6728829320 |
+|   540 | reshma        | F      | 9009294020 |
+|   543 | maha lakshmi  | F      | 9232235453 |
+|   560 | tharun        | M      | 9738293872 |
++-------+---------------+--------+------------+
+9 rows in set (0.00 sec)
+
+#4. mysql> select FacName,DOB from FACULTY order by  DOB;
++-----------+------------+
+| FacName   | DOB        |
++-----------+------------+
+| vinod     | 1980-03-19 |
+| perumal   | 1986-06-15 |
+| jaisharma | 1996-07-23 |
++-----------+------------+
+3 rows in set (0.00 sec)
